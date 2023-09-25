@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="form-container">
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Name" formControlName="name">
+          <mat-error *ngIf="subscriptionForm.get('name')?.invalid && (subscriptionForm.get('name')?.touched || submitted)">Name is required</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Last Name" formControlName="lastName">
+          <mat-error *ngIf="subscriptionForm.get('lastName')?.invalid && (subscriptionForm.get('lastName')?.touched || submitted)">Last Name is required</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="subscriptionForm.get('email')?.invalid && (subscriptionForm.get('email')?.touched || submitted)">Valid email is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Country" formControlName="country" appearance="outline">
+            <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Comments</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+       
+        <button mat-raised-button type="submit" [disabled]="subscriptionForm.invalid">Submit</button>
+      </form>
+  
+</div>

@@ -1,0 +1,63 @@
+.container {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+mat-toolbar {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    color: black !important;
+}
+
+.sticky-header {
+    justify-self: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+}
+
+.nav-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .nav-item {
+        padding: 0 0.8rem 0.3rem;
+        transition: border-bottom 0.3s ease;
+
+        &:hover {
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    .empty {
+        &:hover {
+            font-weight: 500;
+            cursor: default;
+        }
+    }
+}
+
+.active {
+    border-bottom: 3px solid #DBC194;
+}
+
+.toolbar-logo img {
+    height: 8rem;
+    width: 8rem;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+mat-toolbar span {
+    display: flex;
+    justify-content: space-evenly;
+}
