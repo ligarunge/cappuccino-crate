@@ -1,11 +1,13 @@
 .container {
     padding: 1rem 12rem;
+    min-height: 35vw;
 }
 
 .message-empty {
     display: flex;
     justify-content: center;
-    padding-top: 5rem;
+    align-items: center;
+    height: 35vw;
     font-size: 18px;
 }
 

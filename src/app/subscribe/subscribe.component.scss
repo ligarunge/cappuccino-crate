@@ -1,6 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
+    padding-bottom: 5rem;
 }
 
 .form-container {
@@ -14,6 +15,7 @@
 .message-submitted {
     display: flex;
     justify-content: center;
-    padding-top: 15rem;
+    align-items: center;
+    height: 35vw;
     font-size: 18px;
 }

@@ -30,7 +30,7 @@
     </mat-card>
   </div>
 </div>
-<div class="spinner">
-  <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" color="accent" [diameter]="70">
+<div class="spinner" *ngIf="isLoading">
+  <mat-progress-spinner mode="indeterminate" color="accent" [diameter]="70">
   </mat-progress-spinner>
 </div>
