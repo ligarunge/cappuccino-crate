@@ -15,11 +15,15 @@
       <img src="./assets/logoCC.jpg" alt="Cappuccino crate logo" />
     </span>
     <span class="nav-items">
-      <div class="nav-item empty">
-        Promotions
-      </div>
       <div class="nav-item" routerLink="subscribe" routerLinkActive="active">
-       Subscribe
+        Subscribe
+      </div>
+      <div class="nav-item" routerLink="cart" routerLinkActive="active" [matBadge]="cartService.totalItems"
+        *ngIf="cartService.totalItems > 0" matBadgeColor="accent">
+        Cart
+      </div>
+      <div class="nav-item" routerLink="cart" routerLinkActive="active" *ngIf="cartService.totalItems <= 0">
+        Cart
       </div>
       <div class="nav-item empty">
         Contact us
@@ -27,5 +31,5 @@
     </span>
   </mat-toolbar>
   <router-outlet></router-outlet>
-  
+
 </div>

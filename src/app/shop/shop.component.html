@@ -1,40 +1,36 @@
 <div class="container">
-    <div class="grid-container">
-            <mat-card class="coffee-card">
-                <mat-card-header>
-                  <mat-card-title-group>
-                    <mat-card-title>Shiba Inu</mat-card-title>
-                    <mat-card-subtitle>Medium</mat-card-subtitle>
-                    <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-                  </mat-card-title-group>
-                </mat-card-header>
-                <mat-card-content>
-                long text
-                </mat-card-content>
-              </mat-card>
-              <mat-card class="coffee-card">
-                <mat-card-header>
-                  <mat-card-title-group>
-                    <mat-card-title>Shiba Inu</mat-card-title>
-                    <mat-card-subtitle>Medium</mat-card-subtitle>
-                    <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-                  </mat-card-title-group>
-                </mat-card-header>
-                <mat-card-content>
-                long text
-                </mat-card-content>
-              </mat-card>
-              <mat-card class="coffee-card">
-                <mat-card-header>
-                  <mat-card-title-group>
-                    <mat-card-title>Shiba Inu</mat-card-title>
-                    <mat-card-subtitle>Medium</mat-card-subtitle>
-                    <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-                  </mat-card-title-group>
-                </mat-card-header>
-                <mat-card-content>
-                long text
-                </mat-card-content>
-              </mat-card>
-            </div>
+  <div class="row-buttons">
+    <button mat-button (click)="setSearchTerm('pastries')">Pastries</button>
+    <button mat-button (click)="setSearchTerm('tarts')">Tarts</button>
+    <button mat-button (click)="setSearchTerm('cookies')">Cookies</button>
+  </div>
+  <div class="grid-container" *ngIf="!isLoading">
+    <mat-card class="coffee-card" *ngFor="let item of items">
+      <div *ngIf="!item.addedToCart" class="display-card">
+        <div>
+          <mat-card-title>{{ item.food.label }}</mat-card-title>
+          <mat-card-subtitle>{{ item.price | number:'1.2-2' | currency:'EUR' }}</mat-card-subtitle>
+          <button mat-button (click)="displayNutrients(item)">
+            {{ item.displayNutrients ? 'Display Image' : 'Nutritional value' }}
+          </button>
+          <button mat-button class="button-black" (click)="addToCart(item)">
+        Add to cart
+          </button>
+        </div>
+        <img [src]="item.food.image" [alt]="item.food.label" *ngIf="!item.displayNutrients">
+        <div *ngIf="item.displayNutrients" class="nutrients">
+          <p>Kcal: {{ item.food.nutrients.CHOCDF | number:'1.0-0' }}</p>
+          <p>Carbs: {{ item.food.nutrients.CHOCDF | number:'1.0-0' }}</p>
+          <p>Fat: {{ item.food.nutrients.FAT | number:'1.0-0' }}</p>
+        </div>
+      </div>
+      <div *ngIf="item.addedToCart" class="message-success">
+      <h3> Item has been successfully added to the cart!</h3> 
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div class="spinner">
+  <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" color="accent" [diameter]="70">
+  </mat-progress-spinner>
 </div>

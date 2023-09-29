@@ -1,8 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
     width: 20%;
     padding: 5rem;
     padding-bottom: 0;
+}
 
+.message-submitted {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+    font-size: 18px;
 }

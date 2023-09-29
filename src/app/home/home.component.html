@@ -15,5 +15,31 @@
              </div>
         </div>
     </div>
+    <div class="introduction">
+        <h3>HOW IT WORKS</h3>
+        <div class="display-flex">
+            <div class="img-round" (mouseover)="onMouseOver($event)" (mouseout)="onMouseOut($event)">
+                <img src="./assets/browsing.jpg" alt="Browsing"/>  
+                <h3>1. SIGN UP</h3>
+                <p> Discover sweet gems</p>
+                <p>Artisan handcrafted treats prepared by local desert experts for you</p>
+            </div>
+            <div class="img-round" (mouseover)="onMouseOver($event)" (mouseout)="onMouseOut($event)">
+                <img src="./assets/paper_bag.jpg" alt="Paper bag"/>  
+                <h3>2. RECEIVE HAPPINESS IN A BAG</h3>
+                <p> Desert & coffee boxes delivered</p>
+                <p>Taste, share and enjoy!</p>
+            </div>
+            <div class="img-round" (mouseover)="onMouseOver($event)" (mouseout)="onMouseOut($event)">
+                <img src="./assets/croissants_variety.jpg" alt="Croissants"/>  
+                <h3>3. INDULGE</h3>
+                <p>Send a box to your loved ones</p>
+                <p>Savor best treats from our shop</p>
+            </div>
+        </div>
+    </div>
     <app-coffee></app-coffee>
+    <div class="footer">
+        <a href="https://github.com/ligarunge/cappuccino-crate" target="_blank" rel="noopener noreferrer" >Git repository of Cappuccino Crate</a>
+    </div>
 </div>

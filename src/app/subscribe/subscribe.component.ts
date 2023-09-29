@@ -11,6 +11,7 @@ export class SubscribeComponent {
 
   submitted = false;
   countries = ['Latvia', 'Lithuania', 'UK', 'Australia', 'India'];
+  subscriberName: string = '';
 
   subscriptionForm = this.fb.group({
     name: ['', Validators.required],
@@ -23,12 +24,9 @@ export class SubscribeComponent {
 
   onSubmit() {
     this.submitted = true;
-    console.log('submitted', this.submitted)
     if (this.subscriptionForm.valid) {
       console.log(this.subscriptionForm.value);
-      // You might want to reset the form and the submitted flag here if the submission is successful
-       this.subscriptionForm.reset();
-       this.submitted = false;
+      this.subscriberName = this.subscriptionForm.get('name')?.value ?? '';
     }
   }
 
