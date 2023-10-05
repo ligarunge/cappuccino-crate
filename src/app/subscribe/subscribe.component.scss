@@ -1,15 +1,14 @@
 .container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-bottom: 5rem;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    padding: 5rem;
-    padding-bottom: 0;
+    align-items: center;
+    padding: 5rem 0 5rem 0;
 }
 
 .message-submitted {
@@ -18,4 +17,23 @@
     align-items: center;
     height: 35vw;
     font-size: 18px;
+}
+
+.joke {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 10rem;
+    font-size: 16px;
+
+    img {
+        width: 18rem;
+        border-radius: 5%;
+        margin-top: 4rem;
+        margin-right: -5rem;
+    }
+
+    p {
+      
+    }
 }

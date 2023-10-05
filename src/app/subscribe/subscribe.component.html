@@ -24,6 +24,10 @@
         <button mat-raised-button type="submit" 
         [disabled]="subscriptionForm.invalid">Submit</button>
       </form>
+      <div class="joke">
+        <img src="./assets/coffee_heart.jpg" alt="coffee"/>  
+       <p *ngIf="randomJoke">{{ randomJoke.joke }}</p> 
+      </div>     
       <div *ngIf="submitted" class="message-submitted">
         <p>Thank you, {{ subscriberName }}! Your form has been submitted.</p>
     </div>

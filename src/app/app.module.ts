@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatStepperModule } from '@angular/material/stepper';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
@@ -50,6 +51,7 @@ import { CartComponent } from './cart/cart.component';
     MatBadgeModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    MatStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
