@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { config } from 'src/config';
+import { environment } from 'src/environments/environment';
 
 interface Food {
   category: string;
@@ -57,7 +57,7 @@ export class ShopComponent implements OnInit {
 
   fetchData() {
     this.isLoading = true;
-    const myKey = config.apiKey;
+    const myKey = environment.apiKey;
     const url = `https://edamam-food-and-grocery-database.p.rapidapi.com/api/food-database/v2/parser?nutrition-type=cooking&ingr=${this.searchTerm}`;
     const headers = {
       'X-RapidAPI-Key': myKey,
@@ -95,7 +95,7 @@ export class ShopComponent implements OnInit {
 
     setTimeout(() => {
       item.addedToCart = false;
-    }, 800);
+    }, 600);
   }
 
 }
