@@ -28,7 +28,8 @@
         <p>Thank you, {{ subscriberName }}! Your form has been submitted.</p>
     </div>
       <div class="joke">
-        <img src="./assets/coffee_heart.jpg" alt="coffee"/>  
+        <img src="./assets/coffee_heart.jpg" matTooltip="Subscribe to receive our best offers!"
+        matTooltipPosition="above" alt="coffee"/>  
        <p *ngIf="randomJoke">{{ randomJoke.joke }}</p> 
       </div>        
 </div>
